@@ -10,9 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * A simple Swing program that creates a window with a button.
- * The button updates a counter each time it is clicked. There is a label
- * that displays the counter value.
+ * A simple Swing dungeon game.
  *
  * @author Joseph Townshend
  * @version Mar 29, 2020
@@ -57,6 +55,7 @@ public class Game implements ActionListener{
 
   }
 
+
   public static void main(String[] args) {
     new Game();
   }
@@ -64,7 +63,7 @@ public class Game implements ActionListener{
 
   /**
    * Increments the counter on each button click and displays
-   * the new value.
+   * the current room in which the player occupies.
    * @param event information about the button click
    */
   @Override
