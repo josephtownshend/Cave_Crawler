@@ -163,10 +163,12 @@ public class Game implements ActionListener {
       location = "cave";
     } else if (location == "chamber2" && event.getSource() == northButton) {
       message.setText("Nothing but cold dark walls...");
-    } else if (location == "chamber2" && event.getSource() == southButton) {
+    } else if (location == "chamber2" && event.getSource() == southButton && item == false) {
       message.setText("You stumble into a chest! You find a steel ring...");
       item = true;
-    } else if (location == "chamber2" && event.getSource() == westButton) {
+    } else if (location == "chamber2" && event.getSource() == southButton && item == true) {
+      message.setText("You stumble into a chest, it's empty...");
+    }else if (location == "chamber2" && event.getSource() == westButton) {
       message.setText("Nothing but cold dark walls...");
     } else {
       return;
