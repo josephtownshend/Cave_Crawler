@@ -1,5 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -49,12 +48,12 @@ public class Game implements ActionListener {
 
     panel = new JPanel();
     panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-    panel.setLayout(new GridLayout(2, 1));
+    panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
 
-    panel.add(northButton);
-    panel.add(southButton);
-    panel.add(westButton);
-    panel.add(eastButton);
+    panel.add(northButton, BorderLayout.NORTH);
+    panel.add(southButton, BorderLayout.SOUTH);
+    panel.add(westButton, BorderLayout.WEST);
+    panel.add(eastButton, BorderLayout.EAST);
     panel.add(message);
 
     frame.add(panel, BorderLayout.CENTER); // add panel to frame
