@@ -21,7 +21,8 @@ import javax.swing.SwingConstants;
 public class Game implements ActionListener {
 
   private String location = "passage";
-  private boolean item = false;
+  private boolean steelKey = false;
+  private boolean bronzeKey = false;
 
   private final JFrame frame;
   private final JPanel panel;
@@ -124,15 +125,17 @@ public class Game implements ActionListener {
     if (location == "passage" && event.getSource() == northButton) {
       location = "cave";
       message.setText("You walk into a dark cave");
-    } else if (location == "passage" && event.getSource() == southButton && item == true) {
+    } else if (location == "passage" && event.getSource() == southButton && bronzeKey == true) {
       location = "passage";
-      message.setText("You walk into sunlight");
+      message.setText("You walk out into sunlight");
     } else if (location == "passage" && event.getSource() == southButton) {
       location = "passage";
-      message.setText("You're quest is not yet complete...");
+      message.setText("A locked metal gate blocks your exit...");
     } else if (location == "passage" && event.getSource() == westButton) {
       message.setText("Nothing but cold dark walls...");
-    } else if (location == "passage" && event.getSource() == eastButton) {
+    } else if (location == "passage" && event.getSource() == eastButton && steelKey == false) {
+      message.setText("A locked wooden door blocks your way...");
+    } else if (location == "passage" && event.getSource() == eastButton && steelKey == true) {
       location = "chamber1";
       message.setText("You walk into a small chamber");
 
@@ -151,7 +154,10 @@ public class Game implements ActionListener {
       message.setText("You find yourself in a long passage");
       location = "passage";
     } else if (location == "chamber1" && event.getSource() == northButton) {
-      message.setText("You stumble into a chest! It's empty...");
+      message.setText("You stumble into a chest! You find a bronze key...");
+      bronzeKey = true;
+    } else if (location == "chamber1" && event.getSource() == southButton && bronzeKey == true) {
+      message.setText("The chest is empty...");
     } else if (location == "chamber1" && event.getSource() == southButton) {
       message.setText("Nothing but cold dark walls...");
     } else if (location == "chamber1" && event.getSource() == eastButton) {
@@ -163,12 +169,12 @@ public class Game implements ActionListener {
       location = "cave";
     } else if (location == "chamber2" && event.getSource() == northButton) {
       message.setText("Nothing but cold dark walls...");
-    } else if (location == "chamber2" && event.getSource() == southButton && item == false) {
-      message.setText("You stumble into a chest! You find a steel ring...");
-      item = true;
-    } else if (location == "chamber2" && event.getSource() == southButton && item == true) {
-      message.setText("You stumble into a chest, it's empty...");
-    }else if (location == "chamber2" && event.getSource() == westButton) {
+    } else if (location == "chamber2" && event.getSource() == southButton && steelKey == false) {
+      message.setText("You stumble into a chest! You find a steel key...");
+      steelKey = true;
+    } else if (location == "chamber2" && event.getSource() == southButton && steelKey == true) {
+      message.setText("The chest is empty...");
+    } else if (location == "chamber2" && event.getSource() == westButton) {
       message.setText("Nothing but cold dark walls...");
     } else {
       return;
