@@ -35,12 +35,22 @@ public class Game implements ActionListener {
 
   public Game() {
 
+    // UI setup
     frame = new JFrame();
-
     panel = new JPanel();
+
+    frame.getContentPane().add("Center", panel);
+    frame.setSize(650, 300);
+
     panel.setBackground(Color.BLACK);
 //    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); // padding around the button panel
     panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
+
+    frame.add(panel, BorderLayout.CENTER); // add panel to frame
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // behaviour for closing frame
+    frame.setTitle("Cave Crawler"); // set title of frame
+//    frame.pack(); // set frame to same as elements within
+    frame.setVisible(true); // set window to be visible and in focus
 
     // North button
     northButton = new JButton("North");
@@ -92,12 +102,6 @@ public class Game implements ActionListener {
     panel.add(southButton, BorderLayout.SOUTH);
     panel.add(eastButton, BorderLayout.EAST);
     panel.add(westButton, BorderLayout.WEST);
-
-    frame.add(panel, BorderLayout.CENTER); // add panel to frame
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // behaviour for closing frame
-    frame.setTitle("Cave Crawler"); // set title of frame
-    frame.pack(); // set frame to certain size
-    frame.setVisible(true); // set window to be visible and in focus
 
   }
 
