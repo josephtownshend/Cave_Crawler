@@ -23,6 +23,8 @@ public class Game implements ActionListener {
   private final JFrame frame;
   private final JButton northButton;
   private final JButton southButton;
+  private final JButton westButton;
+  private final JButton eastButton;
   private final JPanel panel;
 
 
@@ -36,6 +38,12 @@ public class Game implements ActionListener {
     southButton = new JButton("South");
     southButton.addActionListener(this);
 
+    westButton = new JButton("West");
+    westButton.addActionListener(this);
+
+    eastButton = new JButton("East");
+    eastButton.addActionListener(this);
+
     message = new JLabel();
     message.setText("You find yourself in a long passage");
 
@@ -45,6 +53,8 @@ public class Game implements ActionListener {
 
     panel.add(northButton);
     panel.add(southButton);
+    panel.add(westButton);
+    panel.add(eastButton);
     panel.add(message);
 
     frame.add(panel, BorderLayout.CENTER); // add panel to frame
