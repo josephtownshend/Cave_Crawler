@@ -84,6 +84,8 @@ public class Game implements ActionListener {
 
     // In order to make the label centred swing constants must be set here.
     message = new JLabel("You find yourself in a long passage", SwingConstants.CENTER);
+    message.setForeground(Color.RED);
+    message.setFont(new Font("SimSun", Font.PLAIN, 20));
 
     panel.add(message);
     panel.add(northButton, BorderLayout.NORTH);
