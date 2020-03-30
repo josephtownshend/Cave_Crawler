@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 
 public class Game implements ActionListener {
 
-  private int count = 1;
+  private String location = "passage";
 
   private final JFrame frame;
   private final JPanel panel;
@@ -28,8 +28,6 @@ public class Game implements ActionListener {
   private final JButton southButton;
   private final JButton eastButton;
   private final JButton westButton;
-
-
 
 
   public Game() {
@@ -62,11 +60,9 @@ public class Game implements ActionListener {
     panel.add(eastButton, BorderLayout.EAST);
     panel.add(westButton, BorderLayout.WEST);
 
-
-
     frame.add(panel, BorderLayout.CENTER); // add panel to frame
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // behaviour for closing frame
-    frame.setTitle("Our GUI"); // set title of frame
+    frame.setTitle("Cave Crawler"); // set title of frame
     frame.pack(); // set frame to certain size
     frame.setVisible(true); // set window to be visible and in focus
 
@@ -87,16 +83,16 @@ public class Game implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent event) {
 
-    if (count == 1 && event.getSource() == northButton) {
-      count++;
+    if (location == "passage" && event.getSource() == northButton) {
+      location = "cave";
       message.setText("You walk into a dark cave");
-    } else if (count == 1 && event.getSource() == southButton) {
-      count--;
+    } else if (location == "passage" && event.getSource() == southButton) {
+      location = "sunlight";
       message.setText("You walk into sunlight");
-    } else if (count == 2 && event.getSource() == northButton) {
+    } else if (location == "cave" && event.getSource() == northButton) {
       message.setText("You can go no further...");
-    } else if (count == 2 && event.getSource() == southButton) {
-      count--;
+    } else if (location == "cave" && event.getSource() == southButton) {
+      location = "passage";
       message.setText("You find yourself in a long passage");
     } else {
       return;
