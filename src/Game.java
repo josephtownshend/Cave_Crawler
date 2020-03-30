@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /**
  * A simple Swing dungeon game.
@@ -18,13 +19,17 @@ import javax.swing.JPanel;
 public class Game implements ActionListener {
 
   private int count = 1;
-  private final JLabel message;
+
   private final JFrame frame;
+  private final JPanel panel;
+
+  private final JLabel message;
   private final JButton northButton;
   private final JButton southButton;
-  private final JButton westButton;
   private final JButton eastButton;
-  private final JPanel panel;
+  private final JButton westButton;
+
+
 
 
   public Game() {
@@ -37,24 +42,27 @@ public class Game implements ActionListener {
     southButton = new JButton("South");
     southButton.addActionListener(this);
 
-    westButton = new JButton("West");
-    westButton.addActionListener(this);
-
     eastButton = new JButton("East");
     eastButton.addActionListener(this);
 
-    message = new JLabel();
-    message.setText("You find yourself in a long passage");
+    westButton = new JButton("West");
+    westButton.addActionListener(this);
+
+
+    // In order to make the label centred swing constants must be set here.
+    message = new JLabel("You find yourself in a long passage", SwingConstants.CENTER);
 
     panel = new JPanel();
     panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
     panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
 
+    panel.add(message);
     panel.add(northButton, BorderLayout.NORTH);
     panel.add(southButton, BorderLayout.SOUTH);
-    panel.add(westButton, BorderLayout.WEST);
     panel.add(eastButton, BorderLayout.EAST);
-    panel.add(message);
+    panel.add(westButton, BorderLayout.WEST);
+
+
 
     frame.add(panel, BorderLayout.CENTER); // add panel to frame
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // behaviour for closing frame
