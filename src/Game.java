@@ -19,6 +19,7 @@ import javax.swing.SwingConstants;
 public class Game implements ActionListener {
 
   private String location = "passage";
+  private boolean item = false;
 
   private final JFrame frame;
   private final JPanel panel;
@@ -45,7 +46,6 @@ public class Game implements ActionListener {
 
     westButton = new JButton("West");
     westButton.addActionListener(this);
-
 
     // In order to make the label centred swing constants must be set here.
     message = new JLabel("You find yourself in a long passage", SwingConstants.CENTER);
@@ -80,20 +80,58 @@ public class Game implements ActionListener {
    *
    * @param event information about the button click
    */
+  @SuppressWarnings("unused")
   @Override
   public void actionPerformed(ActionEvent event) {
 
+      // passage
     if (location == "passage" && event.getSource() == northButton) {
       location = "cave";
       message.setText("You walk into a dark cave");
-    } else if (location == "passage" && event.getSource() == southButton) {
-      location = "sunlight";
+    } else if (location == "passage" && event.getSource() == southButton && item == true) {
+      location = "passage";
       message.setText("You walk into sunlight");
+    } else if (location == "passage" && event.getSource() == southButton) {
+      location = "passage";
+      message.setText("You're quest is not yet complete...");
+    } else if (location == "passage" && event.getSource() == westButton) {
+      message.setText("Nothing but cold dark walls...");
+    } else if (location == "passage" && event.getSource() == eastButton) {
+      location = "chamber1";
+      message.setText("You walk into a small chamber");
+
+      // cave
     } else if (location == "cave" && event.getSource() == northButton) {
       message.setText("You can go no further...");
     } else if (location == "cave" && event.getSource() == southButton) {
       location = "passage";
       message.setText("You find yourself in a long passage");
+    } else if (location == "cave" && event.getSource() == westButton) {
+      location = "chamber2";
+      message.setText("You walk into a dark chamber");
+
+      // chamber1
+    } else if (location == "chamber1" && event.getSource() == westButton) {
+      message.setText("You find yourself in a long passage");
+      location = "passage";
+    } else if (location == "chamber1" && event.getSource() == northButton) {
+      message.setText("You stumble into a chest! It's empty...");
+    } else if (location == "chamber1" && event.getSource() == southButton) {
+      message.setText("Nothing but cold dark walls...");
+    } else if (location == "chamber1" && event.getSource() == eastButton) {
+      message.setText("Nothing but cold dark walls...");
+
+      // chamber2
+    } else if (location == "chamber2" && event.getSource() == eastButton) {
+      message.setText("You walk into a dark cave");
+      location = "cave";
+    } else if (location == "chamber2" && event.getSource() == northButton) {
+      message.setText("Nothing but cold dark walls...");
+    } else if (location == "chamber2" && event.getSource() == southButton) {
+      message.setText("You stumble into a chest! You find a steel ring...");
+      item = true;
+    } else if (location == "chamber2" && event.getSource() == westButton) {
+      message.setText("Nothing but cold dark walls...");
     } else {
       return;
     }
