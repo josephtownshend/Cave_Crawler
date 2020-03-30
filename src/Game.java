@@ -112,12 +112,7 @@ public class Game implements ActionListener {
   }
 
 
-  /**
-   * Increments the counter on each button click and displays the current room in
-   * which the player occupies.
-   *
-   * @param event information about the button click
-   */
+
   @Override
   public void actionPerformed(ActionEvent event) {
 
