@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -35,24 +36,33 @@ public class Game implements ActionListener {
 
     frame = new JFrame();
 
+    panel = new JPanel();
+    panel.setBackground(Color.BLACK);
+    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+    panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
+
     northButton = new JButton("North");
+    northButton.setBackground(Color.DARK_GRAY);
+    northButton.setBorder(BorderFactory.createLoweredBevelBorder());
     northButton.addActionListener(this);
 
     southButton = new JButton("South");
+    southButton.setBackground(Color.DARK_GRAY);
+    southButton.setBorder(BorderFactory.createLoweredBevelBorder());
     southButton.addActionListener(this);
 
     eastButton = new JButton("East");
+    eastButton.setBackground(Color.DARK_GRAY);
+    eastButton.setBorder(BorderFactory.createLoweredBevelBorder());
     eastButton.addActionListener(this);
 
     westButton = new JButton("West");
+    westButton.setBackground(Color.DARK_GRAY);
+    westButton.setBorder(BorderFactory.createLoweredBevelBorder());
     westButton.addActionListener(this);
 
     // In order to make the label centred swing constants must be set here.
     message = new JLabel("You find yourself in a long passage", SwingConstants.CENTER);
-
-    panel = new JPanel();
-    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
-    panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
 
     panel.add(message);
     panel.add(northButton, BorderLayout.NORTH);
