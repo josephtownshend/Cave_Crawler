@@ -1,3 +1,7 @@
-# Cave Game
+# Cave Crawler
  
-### A very simple GUI dungeon game based on the Makers Academy pre course challenge 'Cave game' remade used Java & Swing.
+### A simple GUI cave crawler based on the Makers Academy pre course challenge 'Cave Game' re-though using Java & Swing.
+
+#### Notes
+- Id'd like to add some randomness to which chest contains the ring.
+- Perhaps in the other chest a bat could attack the player, depleating health.
