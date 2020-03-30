@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -38,27 +39,47 @@ public class Game implements ActionListener {
 
     panel = new JPanel();
     panel.setBackground(Color.BLACK);
-    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+//    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); // padding around the button panel
     panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
 
+    // North button
     northButton = new JButton("North");
     northButton.setBackground(Color.DARK_GRAY);
-    northButton.setBorder(BorderFactory.createLoweredBevelBorder());
+    northButton.setForeground(Color.RED);
+    northButton.setFont(new Font("SimSun", Font.PLAIN, 20));
+    northButton.setBorder(BorderFactory.createCompoundBorder(
+      BorderFactory.createLoweredBevelBorder(),
+      BorderFactory.createEmptyBorder(10, 10, 10, 10)));
     northButton.addActionListener(this);
 
+    // South button
     southButton = new JButton("South");
     southButton.setBackground(Color.DARK_GRAY);
-    southButton.setBorder(BorderFactory.createLoweredBevelBorder());
+    southButton.setForeground(Color.RED);
+    southButton.setFont(new Font("SimSun", Font.PLAIN, 20));
+    southButton.setBorder(BorderFactory.createCompoundBorder(
+      BorderFactory.createLoweredBevelBorder(),
+      BorderFactory.createEmptyBorder(10, 10, 10, 10)));
     southButton.addActionListener(this);
 
+    // East button
     eastButton = new JButton("East");
     eastButton.setBackground(Color.DARK_GRAY);
-    eastButton.setBorder(BorderFactory.createLoweredBevelBorder());
+    eastButton.setForeground(Color.RED);
+    eastButton.setFont(new Font("SimSun", Font.PLAIN, 20));
+    eastButton.setBorder(BorderFactory.createCompoundBorder(
+      BorderFactory.createLoweredBevelBorder(),
+      BorderFactory.createEmptyBorder(10, 10, 10, 10)));
     eastButton.addActionListener(this);
 
+    // West button
     westButton = new JButton("West");
     westButton.setBackground(Color.DARK_GRAY);
-    westButton.setBorder(BorderFactory.createLoweredBevelBorder());
+    westButton.setForeground(Color.RED);
+    westButton.setFont(new Font("SimSun", Font.PLAIN, 20));
+    westButton.setBorder(BorderFactory.createCompoundBorder(
+      BorderFactory.createLoweredBevelBorder(),
+      BorderFactory.createEmptyBorder(10, 10, 10, 10)));
     westButton.addActionListener(this);
 
     // In order to make the label centred swing constants must be set here.
@@ -90,7 +111,6 @@ public class Game implements ActionListener {
    *
    * @param event information about the button click
    */
-  @SuppressWarnings("unused")
   @Override
   public void actionPerformed(ActionEvent event) {
 
