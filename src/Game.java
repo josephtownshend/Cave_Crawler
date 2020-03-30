@@ -14,38 +14,38 @@ import javax.swing.JPanel;
  *
  * @author Joseph Townshend
  * @version Mar 29, 2020
- *
  */
 
-public class Game implements ActionListener{
+public class Game implements ActionListener {
 
   private int count = 1;
-  private final JLabel label;
+  private final JLabel message;
   private final JFrame frame;
-  private final JButton upButton;
-  private final JButton downButton;
+  private final JButton northButton;
+  private final JButton southButton;
   private final JPanel panel;
+
 
   public Game() {
 
     frame = new JFrame();
 
-    upButton = new JButton("Up");
-    upButton.addActionListener(this);
+    northButton = new JButton("North");
+    northButton.addActionListener(this);
 
-    downButton = new JButton("Down");
-    downButton.addActionListener(this);
+    southButton = new JButton("South");
+    southButton.addActionListener(this);
 
-    label = new JLabel();
-    label.setText("You find yourself in a long passage");
+    message = new JLabel();
+    message.setText("You find yourself in a long passage");
 
     panel = new JPanel();
-    panel.setBorder(BorderFactory.createEmptyBorder(30, 30 , 10 , 30));
+    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
     panel.setLayout(new GridLayout(2, 1));
 
-    panel.add(upButton);
-    panel.add(downButton);
-    panel.add(label);
+    panel.add(northButton);
+    panel.add(southButton);
+    panel.add(message);
 
     frame.add(panel, BorderLayout.CENTER); // add panel to frame
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // behaviour for closing frame
@@ -62,28 +62,28 @@ public class Game implements ActionListener{
 
 
   /**
-   * Increments the counter on each button click and displays
-   * the current room in which the player occupies.
+   * Increments the counter on each button click and displays the current room in
+   * which the player occupies.
+   *
    * @param event information about the button click
    */
   @Override
   public void actionPerformed(ActionEvent event) {
 
-    if (count == 1 && event.getSource() == upButton) {
+    if (count == 1 && event.getSource() == northButton) {
       count++;
-      label.setText("You walk into a dark cave");
-    } else if (count == 1 && event.getSource() == downButton) {
+      message.setText("You walk into a dark cave");
+    } else if (count == 1 && event.getSource() == southButton) {
       count--;
-      label.setText("You walk out into sunlight");
-    } else if (count == 2 && event.getSource() == upButton) {
-      label.setText("You can go no further");
-    } else if (count == 2 && event.getSource() == downButton) {
+      message.setText("You walk into sunlight");
+    } else if (count == 2 && event.getSource() == northButton) {
+      message.setText("You can go no further...");
+    } else if (count == 2 && event.getSource() == southButton) {
       count--;
-      label.setText("You find yourself in a long passage");
+      message.setText("You find yourself in a long passage");
     } else {
       return;
     }
 
   }
 }
-
