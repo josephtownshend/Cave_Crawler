@@ -44,7 +44,7 @@ public class Game implements ActionListener {
 
     frame.getContentPane().add("Center", panel);
     frame.setSize(650, 300);
-    frame.setMinimumSize(new Dimension(650, 300));
+    frame.setMinimumSize(new Dimension(700, 300));
 
     panel.setBackground(Color.BLACK);
     panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
@@ -115,7 +115,6 @@ public class Game implements ActionListener {
   }
 
 
-
   @Override
   public void actionPerformed(ActionEvent event) {
 
@@ -146,15 +145,17 @@ public class Game implements ActionListener {
     } else if (location == "cave" && event.getSource() == westButton) {
       location = "chamber2";
       message.setText("You walk into a dark chamber");
+    } else if (location == "cave" && event.getSource() == eastButton) {
+      message.setText("Nothing but cold dark walls...");
 
       // chamber1
     } else if (location == "chamber1" && event.getSource() == westButton) {
       message.setText("You find yourself in a long passage");
       location = "passage";
-    } else if (location == "chamber1" && event.getSource() == northButton) {
-      message.setText("You stumble into a chest! You find a bronze key...");
+    } else if (location == "chamber1" && event.getSource() == northButton && bronzeKey == false) {
+      message.setText("You stumble into a chest!\n You find a bronze key...");
       bronzeKey = true;
-    } else if (location == "chamber1" && event.getSource() == southButton && bronzeKey == true) {
+    } else if (location == "chamber1" && event.getSource() == northButton && bronzeKey == true) {
       message.setText("The chest is empty...");
     } else if (location == "chamber1" && event.getSource() == southButton) {
       message.setText("Nothing but cold dark walls...");
