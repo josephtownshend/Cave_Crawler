@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,6 +44,7 @@ public class Game implements ActionListener {
 
     frame.getContentPane().add("Center", panel);
     frame.setSize(650, 300);
+    frame.setMinimumSize(new Dimension(650, 300));
 
     panel.setBackground(Color.BLACK);
 //    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); // padding around the button panel
