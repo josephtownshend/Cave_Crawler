@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 /**
  * A simple Swing dungeon game.
@@ -46,6 +47,7 @@ public class Game implements ActionListener {
     panel.setBackground(Color.BLACK);
 //    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); // padding around the button panel
     panel.setLayout(new BorderLayout(2, 1)); // this is what allows you to have N,S,E,W compass points.
+    panel.setBorder(new EmptyBorder(20,20,20,20)); // adds margin around panel
 
     frame.add(panel, BorderLayout.CENTER); // add panel to frame
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // behaviour for closing frame
@@ -58,6 +60,7 @@ public class Game implements ActionListener {
     northButton.setBackground(Color.DARK_GRAY);
     northButton.setForeground(Color.RED);
     northButton.setFont(new Font("SimSun", Font.PLAIN, 20));
+
     northButton.setBorder(BorderFactory.createCompoundBorder(
       BorderFactory.createLoweredBevelBorder(),
       BorderFactory.createEmptyBorder(10, 10, 10, 10)));
