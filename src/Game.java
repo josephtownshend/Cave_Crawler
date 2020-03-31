@@ -19,7 +19,6 @@ import javax.swing.border.EmptyBorder;
  * @author Joseph Townshend
  * @version Mar 29, 2020
  */
-
 public class Game implements ActionListener {
 
   private String location = "passage";
