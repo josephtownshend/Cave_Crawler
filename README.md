@@ -1,4 +1,12 @@
-# Cave Crawler
+```
+                 ▄█▄    ██       ▄   ▄███▄       ▄█▄    █▄▄▄▄ ██     ▄ ▄   █     ▄███▄   █▄▄▄▄ 
+                 █▀ ▀▄  █ █       █  █▀   ▀      █▀ ▀▄  █  ▄▀ █ █   █   █  █     █▀   ▀  █  ▄▀ 
+                 █   ▀  █▄▄█ █     █ ██▄▄        █   ▀  █▀▀▌  █▄▄█ █ ▄   █ █     ██▄▄    █▀▀▌  
+                 █▄  ▄▀ █  █  █    █ █▄   ▄▀     █▄  ▄▀ █  █  █  █ █  █  █ ███▄  █▄   ▄▀ █  █  
+                 ▀███▀     █   █  █  ▀███▀       ▀███▀    █      █  █ █ █      ▀ ▀███▀     █   
+                          █     █▐                       ▀      █    ▀ ▀                  ▀    
+                         ▀      ▐                              ▀                               
+```
  
 ### A simple GUI cave crawler based on the Makers Academy pre course challenge 'Cave Game' re-though using Java & Swing.
 -------
