@@ -7,3 +7,5 @@
 - ~~Once the player finds the second chest they then get the Bronze key which unlocks the exit.~~
 - Perhaps in the other chest a bat could attack the player, depleting health.
 - I also want to find a way for this to be an exe file, so the game can be shared.
+
+![Gameplay](https://github.com/josephtownshend/Cave_Crawler/blob/master/images/gameplay.png)
