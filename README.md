@@ -8,15 +8,17 @@
                            ▀      ▐                              ▀                               
 ```
 
-<h3 align="center">simple GUI cave crawler based on the Makers Academy pre course challenge 'Cave Game' re-though using Java & Swing.</h3>
+<h3 align="center">A simple GUI cave crawler based on the Makers Academy pre course challenge 'Cave Game' re-though using Java & Swing.</h3>
 
+---------
 
 **<h3 align="center">Gameplay</h3>**
 
 <p align="center">
   <img src="https://github.com/josephtownshend/Cave_Crawler/blob/master/images/gameplay.png">
 </p>
--------
+
+---------
 
 
 #### Notes
