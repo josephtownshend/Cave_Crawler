@@ -12,7 +12,8 @@
 -------
 #### Gameplay
 
-![Gameplay](https://github.com/josephtownshend/Cave_Crawler/blob/master/images/gameplay.png)
+<p align="center">
+![Gameplay](https://github.com/josephtownshend/Cave_Crawler/blob/master/images/gameplay.png)</p>
 -------
 
 
