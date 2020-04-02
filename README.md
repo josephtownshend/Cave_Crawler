@@ -8,7 +8,7 @@
                            ▀      ▐                              ▀                               
 ```
 
-<h3 align="center">A tiny GUI cave crawler based on the Makers Academy pre course challenge 'Cave Game' re-though using Java & Swing.</h3>
+<h3 align="center">A tiny GUI cave crawler based on the Makers Academy pre course challenge 'Cave Game' re-though using Java & Java Swing.</h3>
 
 ---------
 
